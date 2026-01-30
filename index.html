@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXTLOOK — Brand Identity System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --sand: #D4C4B0;
+            --warm-brown: #8B7355;
+            --olive: #6B7B5E;
+            
+            /* Secondary Colors */
+            --off-white: #FAF8F5;
+            --soft-black: #2D2D2D;
+            --warm-grey: #9A9590;
+            
+            /* Accent Colors */
+            --neon-green: #CCFF00;
+            --lime: #B4E61D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--off-white);
+            color: var(--soft-black);
+            line-height: 1.6;
+        }
+        
+        /* ==================== HEADER ==================== */
+        .brand-header {
+            background: linear-gradient(135deg, var(--soft-black) 0%, #3d3d3d 100%);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .brand-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--sand);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .main-logo-display {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .main-logo-display .logo-next {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 4px;
+        }
+        
+        .main-logo-display .logo-look {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--olive);
+            letter-spacing: 4px;
+        }
+        
+        .tagline-main {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--warm-brown);
+            margin-top: 20px;
+        }
+        
+        /* ==================== SECTIONS ==================== */
+        .section {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--warm-brown);
+            margin-bottom: 12px;
+        }
+        
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--soft-black);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        
+        /* ==================== LOGO VARIATIONS ==================== */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .logo-card {
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .logo-card.light {
+            background: var(--off-white);
+            border: 1px solid var(--sand);
+        }
+        
+        .logo-card.dark {
+            background: var(--soft-black);
+        }
+        
+        .logo-card.sand {
+            background: var(--sand);
+        }
+        
+        .logo-card.olive {
+            background: var(--olive);
+        }
+        
+        .logo-card .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+        
+        .logo-card .logo-text .next {
+            font-weight: 700;
+        }
+        
+        .logo-card .logo-text .look {
+            font-weight: 400;
+        }
+        
+        .logo-card.light .next { color: var(--soft-black); }
+        .logo-card.light .look { color: var(--olive); }
+        
+        .logo-card.dark .next { color: #ffffff; }
+        .logo-card.dark .look { color: var(--olive); }
+        
+        .logo-card.sand .next { color: var(--soft-black); }
+        .logo-card.sand .look { color: var(--olive); }
+        
+        .logo-card.olive .next { color: #ffffff; }
+        .logo-card.olive .look { color: var(--sand); }
+        
+        .logo-card .card-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+        
+        .logo-card.light .card-label { color: var(--warm-grey); }
+        .logo-card.dark .card-label { color: rgba(255,255,255,0.5); }
+        .logo-card.sand .card-label { color: var(--warm-brown); }
+        .logo-card.olive .card-label { color: rgba(255,255,255,0.5); }
+        
+        /* ==================== ICON VARIATIONS ==================== */
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        
+        .icon-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .icon-box.light {
+            background: var(--off-white);
+            border: 1px solid var(--sand);
+        }
+        
+        .icon-box.dark {
+            background: var(--soft-black);
+        }
+        
+        .icon-box .icon-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        
+        .icon-box.light .icon-letter { color: var(--soft-black); }
+        .icon-box.dark .icon-letter { color: #ffffff; }
+        
+        .icon-box .icon-accent {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--olive);
+            border-radius: 50%;
+            top: 24px;
+            right: 24px;
+        }
+        
+        .icon-label {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: var(--warm-grey);
+        }
+        
+        /* ==================== COLOR PALETTE ==================== */
+        .color-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 60px;
+            margin-top: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        
+        .color-group-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--soft-black);
+        }
+        
+        .color-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .color-swatch {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .color-preview {
+            height: 100px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-preview::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .color-hex {
+            font-family: 'SF Mono', 'Monaco', monospace;
+            font-size: 13px;
+            color: var(--warm-grey);
+        }
+        
+        .color-usage {
+            font-size: 12px;
+            color: var(--warm-grey);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+        
+        /* ==================== TYPOGRAPHY ==================== */
+        .type-showcase {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 60px;
+            margin-top: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        
+        .type-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--sand);
+            align-items: center;
+        }
+        
+        .type-row:last-child {
+            border-bottom: none;
+        }
+        
+        .type-info {
+            font-size: 12px;
+            color: var(--warm-grey);
+        }
+        
+        .type-info strong {
+            display: block;
+            font-size: 14px;
+            color: var(--soft-black);
+            margin-bottom: 4px;
+        }
+        
+        .type-sample.display-xl {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--soft-black);
+            line-height: 1.1;
+        }
+        
+        .type-sample.display-lg {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--soft-black);
+        }
+        
+        .type-sample.display-md {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--soft-black);
+        }
+        
+        .type-sample.body-text {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--soft-black);
+            line-height: 1.7;
+        }
+        
+        .type-sample.body-small {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--warm-grey);
+        }
+        
+        .type-sample.button-text {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--soft-black);
+        }
+        
+        /* ==================== MOCKUPS ==================== */
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .mockup-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        
+        .mockup-label {
+            padding: 16px 24px;
+            background: var(--sand);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--warm-brown);
+        }
+        
+        /* Business Card Mockup */
+        .business-card-mockup {
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+        
+        .business-card {
+            width: 340px;
+            height: 200px;
+            background: var(--off-white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--sand);
+            opacity: 0.3;
+            border-radius: 0 0 0 100%;
+        }
+        
+        .business-card .bc-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        
+        .business-card .bc-logo .next {
+            font-weight: 700;
+            color: var(--soft-black);
+        }
+        
+        .business-card .bc-logo .look {
+            font-weight: 400;
+            color: var(--olive);
+        }
+        
+        .business-card .bc-tagline {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--warm-brown);
+            margin-top: 4px;
+        }
+        
+        .business-card .bc-info {
+            position: relative;
+        }
+        
+        .business-card .bc-name {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--soft-black);
+        }
+        
+        .business-card .bc-title {
+            font-size: 12px;
+            color: var(--warm-grey);
+            margin-bottom: 12px;
+        }
+        
+        .business-card .bc-contact {
+            font-size: 11px;
+            color: var(--warm-grey);
+            line-height: 1.6;
+        }
+        
+        /* Website Header Mockup */
+        .website-mockup {
+            background: #e8e8e8;
+            padding: 40px;
+        }
+        
+        .browser-frame {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .browser-bar {
+            background: #f5f5f5;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .browser-dot.red { background: #ff5f57; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #28c840; }
+        
+        .browser-url {
+            flex: 1;
+            margin-left: 16px;
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 12px;
+            color: var(--warm-grey);
+        }
+        
+        .website-content {
+            background: var(--off-white);
+        }
+        
+        .website-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--sand);
+        }
+        
+        .website-nav .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+        
+        .website-nav .nav-logo .next {
+            font-weight: 700;
+            color: var(--soft-black);
+        }
+        
+        .website-nav .nav-logo .look {
+            font-weight: 400;
+            color: var(--olive);
+        }
+        
+        .website-nav .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .website-nav .nav-links a {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--soft-black);
+            text-decoration: none;
+        }
+        
+        .website-nav .nav-links a:hover {
+            color: var(--olive);
+        }
+        
+        .website-hero {
+            padding: 80px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--sand) 100%);
+        }
+        
+        .website-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--soft-black);
+            margin-bottom: 16px;
+        }
+        
+        .website-hero p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 18px;
+            color: var(--warm-grey);
+            margin-bottom: 32px;
+        }
+        
+        .website-hero .cta-button {
+            display: inline-block;
+            background: var(--olive);
+            color: #ffffff;
+            padding: 16px 40px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        .website-hero .cta-button:hover {
+            background: var(--warm-brown);
+        }
+        
+        /* Social Media Mockup */
+        .social-mockup {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .instagram-post {
+            width: 320px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .ig-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+        }
+        
+        .ig-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--olive);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .ig-username {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--soft-black);
+        }
+        
+        .ig-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, var(--sand) 0%, var(--warm-brown) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .ig-image .promo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .ig-image .promo-sub {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .ig-actions {
+            padding: 14px 16px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        .ig-actions svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--soft-black);
+            stroke-width: 2;
+        }
+        
+        .ig-caption {
+            padding: 0 16px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .ig-caption strong {
+            color: var(--soft-black);
+        }
+        
+        /* ==================== FOOTER ==================== */
+        .brand-footer {
+            background: var(--soft-black);
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .brand-footer .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .brand-footer .footer-logo .next {
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .brand-footer .footer-logo .look {
+            font-weight: 400;
+            color: var(--olive);
+        }
+        
+        .brand-footer p {
+            color: var(--warm-grey);
+            font-size: 14px;
+        }
+        
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .section { padding: 60px 24px; }
+            .section-heading { font-size: 32px; }
+            .main-logo-display .logo-next,
+            .main-logo-display .logo-look { font-size: 48px; }
+            .logo-grid { grid-template-columns: 1fr; }
+            .mockup-grid { grid-template-columns: 1fr; }
+            .type-row { grid-template-columns: 1fr; gap: 16px; }
+            .website-nav .nav-links { display: none; }
+            .website-hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ==================== HEADER ==================== -->
+    <header class="brand-header">
+        <h1>Brand Identity System</h1>
+        <div class="main-logo-display">
+            <span class="logo-next">NEXT</span><span class="logo-look">LOOK</span>
+        </div>
+        <div class="tagline-main">Următorul tău stil</div>
+    </header>
+    
+    <!-- ==================== LOGO VARIATIONS ==================== -->
+    <section class="section">
+        <div class="section-title">01 — Logo</div>
+        <h2 class="section-heading">Variante de Logo</h2>
+        
+        <div class="logo-grid">
+            <div class="logo-card light">
+                <div class="logo-text">
+                    <span class="next">NEXT</span><span class="look">LOOK</span>
+                </div>
+                <span class="card-label">Fundal Deschis</span>
+            </div>
+            
+            <div class="logo-card dark">
+                <div class="logo-text">
+                    <span class="next">NEXT</span><span class="look">LOOK</span>
+                </div>
+                <span class="card-label">Fundal Închis</span>
+            </div>
+            
+            <div class="logo-card sand">
+                <div class="logo-text">
+                    <span class="next">NEXT</span><span class="look">LOOK</span>
+                </div>
+                <span class="card-label">Pe Bej Nisip</span>
+            </div>
+            
+            <div class="logo-card olive">
+                <div class="logo-text">
+                    <span class="next">NEXT</span><span class="look">LOOK</span>
+                </div>
+                <span class="card-label">Pe Verde Măsliniu</span>
+            </div>
+        </div>
+        
+        <!-- Icon Variations -->
+        <div class="icon-row">
+            <div>
+                <div class="icon-box light">
+                    <span class="icon-letter">N</span>
+                    <span class="icon-accent"></span>
+                </div>
+                <div class="icon-label">Favicon Light</div>
+            </div>
+            <div>
+                <div class="icon-box dark">
+                    <span class="icon-letter">N</span>
+                    <span class="icon-accent"></span>
+                </div>
+                <div class="icon-label">Favicon Dark</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== COLOR PALETTE ==================== -->
+    <section class="section">
+        <div class="section-title">02 — Culori</div>
+        <h2 class="section-heading">Paleta de Culori</h2>
+        
+        <div class="color-section">
+            <h3 class="color-group-title">Culori Primare</h3>
+            <div class="color-row">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #D4C4B0;"></div>
+                    <div class="color-name">Bej Nisip</div>
+                    <div class="color-hex">#D4C4B0</div>
+                    <div class="color-usage">Fundaluri, spații de respiro</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #8B7355;"></div>
+                    <div class="color-name">Maro Cald</div>
+                    <div class="color-hex">#8B7355</div>
+                    <div class="color-usage">Accente, text secundar</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #6B7B5E;"></div>
+                    <div class="color-name">Verde Măsliniu</div>
+                    <div class="color-hex">#6B7B5E</div>
+                    <div class="color-usage">Accent premium, CTA</div>
+                </div>
+            </div>
+            
+            <h3 class="color-group-title">Culori Secundare</h3>
+            <div class="color-row">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #FAF8F5; border: 1px solid #D4C4B0;"></div>
+                    <div class="color-name">Alb Crem</div>
+                    <div class="color-hex">#FAF8F5</div>
+                    <div class="color-usage">Fundal principal</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #2D2D2D;"></div>
+                    <div class="color-name">Negru Moale</div>
+                    <div class="color-hex">#2D2D2D</div>
+                    <div class="color-usage">Text principal</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #9A9590;"></div>
+                    <div class="color-name">Gri Cald</div>
+                    <div class="color-hex">#9A9590</div>
+                    <div class="color-usage">Text secundar, linii</div>
+                </div>
+            </div>
+            
+            <h3 class="color-group-title">Culori de Accent (Campanii Speciale)</h3>
+            <div class="color-row">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #CCFF00;"></div>
+                    <div class="color-name">Verde Neon</div>
+                    <div class="color-hex">#CCFF00</div>
+                    <div class="color-usage">Promoții flash, tineret</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #B4E61D;"></div>
+                    <div class="color-name">Lime</div>
+                    <div class="color-hex">#B4E61D</div>
+                    <div class="color-usage">Badge-uri speciale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== TYPOGRAPHY ==================== -->
+    <section class="section">
+        <div class="section-title">03 — Tipografie</div>
+        <h2 class="section-heading">Sistemul Tipografic</h2>
+        
+        <div class="type-showcase">
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Display XL</strong>
+                    Playfair Display Bold<br>
+                    56px / 1.1 line-height
+                </div>
+                <div class="type-sample display-xl">Arată bine.<br>Fără stres.</div>
+            </div>
+            
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Display Large</strong>
+                    Playfair Display Bold<br>
+                    42px / 1.2 line-height
+                </div>
+                <div class="type-sample display-lg">Următorul tău stil</div>
+            </div>
+            
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Display Medium</strong>
+                    Playfair Display Regular<br>
+                    28px / 1.3 line-height
+                </div>
+                <div class="type-sample display-md">Branduri originale la prețuri corecte</div>
+            </div>
+            
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Body Text</strong>
+                    Source Sans Pro Regular<br>
+                    17px / 1.7 line-height
+                </div>
+                <div class="type-sample body-text">Moda nu trebuie să fie scumpă sau complicată. Stilul bun ar trebui să fie pentru toți. La NEXTLOOK găsești branduri originale, selecție atentă și prețuri care au sens.</div>
+            </div>
+            
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Body Small</strong>
+                    Source Sans Pro Regular<br>
+                    14px / 1.6 line-height
+                </div>
+                <div class="type-sample body-small">Livrare în 24h • Return gratuit 30 zile • Plată securizată</div>
+            </div>
+            
+            <div class="type-row">
+                <div class="type-info">
+                    <strong>Button</strong>
+                    Source Sans Pro Semibold<br>
+                    14px / Uppercase / 1px spacing
+                </div>
+                <div class="type-sample button-text">Vezi Colecția</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== MOCKUPS ==================== -->
+    <section class="section">
+        <div class="section-title">04 — Aplicații</div>
+        <h2 class="section-heading">Mockup-uri de Brand</h2>
+        
+        <div class="mockup-grid">
+            <!-- Business Card -->
+            <div class="mockup-card">
+                <div class="mockup-label">Carte de Vizită</div>
+                <div class="business-card-mockup">
+                    <div class="business-card">
+                        <div>
+                            <div class="bc-logo">
+                                <span class="next">NEXT</span><span class="look">LOOK</span>
+                            </div>
+                            <div class="bc-tagline">Următorul tău stil</div>
+                        </div>
+                        <div class="bc-info">
+                            <div class="bc-name">Roxana Popescu</div>
+                            <div class="bc-title">Fondator</div>
+                            <div class="bc-contact">
+                                +40 723 456 789<br>
+                                contact@nextlook.ro<br>
+                                www.nextlook.ro
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instagram Post -->
+            <div class="mockup-card">
+                <div class="mockup-label">Social Media Post</div>
+                <div class="social-mockup">
+                    <div class="instagram-post">
+                        <div class="ig-header">
+                            <div class="ig-avatar">N</div>
+                            <div class="ig-username">nextlook.ro</div>
+                        </div>
+                        <div class="ig-image">
+                            <div class="promo-text">-30%</div>
+                            <div class="promo-sub">La toate modelele Nike</div>
+                        </div>
+                        <div class="ig-actions">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </div>
+                        <div class="ig-caption">
+                            <strong>nextlook.ro</strong> Stilul nu trebuie să coste o avere. 🔥 Nike Air Max, originali, acum cu -30%. Link în bio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Website Mockup -->
+        <div class="mockup-card" style="margin-top: 40px;">
+            <div class="mockup-label">Website Header</div>
+            <div class="website-mockup">
+                <div class="browser-frame">
+                    <div class="browser-bar">
+                        <div class="browser-dot red"></div>
+                        <div class="browser-dot yellow"></div>
+                        <div class="browser-dot green"></div>
+                        <div class="browser-url">nextlook.ro</div>
+                    </div>
+                    <div class="website-content">
+                        <nav class="website-nav">
+                            <div class="nav-logo">
+                                <span class="next">NEXT</span><span class="look">LOOK</span>
+                            </div>
+                            <div class="nav-links">
+                                <a href="#">Bărbați</a>
+                                <a href="#">Femei</a>
+                                <a href="#">Sneakers</a>
+                                <a href="#">Noutăți</a>
+                                <a href="#">Despre Noi</a>
+                            </div>
+                        </nav>
+                        <div class="website-hero">
+                            <h1>Arată bine. Fără stres.</h1>
+                            <p>Branduri originale. Prețuri corecte. Zero bătăi de cap.</p>
+                            <a href="#" class="cta-button">Vezi Colecția</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="brand-footer">
+        <div class="footer-logo">
+            <span class="next">NEXT</span><span class="look">LOOK</span>
+        </div>
+        <p>Brand Identity System — Ianuarie 2026</p>
+    </footer>
+    
+</body>
+</html>
